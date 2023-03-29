@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- title -->
+    <title>Notizblock</title>
+
+    <!-- icon -->
+    <link class="flavicon" rel="icon" href="">
+
+    <!-- include fonts -->
+    <link rel="stylesheet" href="">
+
+    <!-- add UTF-8 Code -->
+    <meta charset="utf-8">
+
+    <!-- handle resolution with viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- include style -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- include script -->
+    <script src="script.js"></script>
+
+</head>
+
+<body onload="renderNotes()">
+    <header>
+        <h1>Notizen</h1>
+    </header>
+
+    <main>
+        <div id="staticContent">
+            <button id="addButton" class="buttonStyle" onclick="renderOverlayAdd()"><img src="img/icon/add-file-64.ico" alt=""></button>
+            <button id="notesButton" class="buttonStyle" onclick="renderNotes()"><img src="img/icon/note-2-64.ico" alt=""></button>
+            <button id="binButton" class="buttonStyle" onclick="renderNotesBin()"><img src="img/icon/trash-64.ico" alt=""></button>
+        </div>
+
+        <div id="dynamicContent">
+            <!-- content for dynamic content Notes -->
+        </div>
+        
+        <div id="overlayContent">
+            <!-- content for overlay -->
+        </div>
+    </main>
+
+    <footer>
+        <!-- footer content -->
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+:root{
+    --color1: rgb(237, 255, 223);
+    --color2: rgba(137, 150, 150, 0.4);
+    --color3: rgb(81, 158, 81);
+    --color4: rgb(89, 180, 89);
+    --borderRadius1: 15px;
+}
+
+/*+++++++++++++ common classes +++++++++++++*/
+
+.buttonStyle {
+    width:70px;
+    height:70px;
+    padding: unset;
+    border: unset;
+    border-radius: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+
+.buttonStyle:hover {
+    background-color: var(--color4) !important;
+    transition: all 150ms ease-in-out;
+}
+.buttonStyle img{
+    width: 40px;
+    height: 40px;
+}
+
+/*+++++++++++++ Static Content +++++++++++++*/
+
+body {
+    margin: 0;
+    background-image: url(img/dark_background.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    min-height: 100vh;
+    font-size: 18px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    color: var(--color1);
+}
+
+#staticContent{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+}
+
+#staticContent button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+/*+++++++++++++ Dynamic Content +++++++++++++*/
+
+#dynamicContent {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    padding-left: 150px;
+}
+
+.noteCard {
+    display: flex;
+    justify-content: space-between;
+    height: 250px;
+    width: 400px;
+    padding: 15px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    margin: 20px;
+    background-color: var(--color2);
+    border-radius: var(--borderRadius1);
+    color: var(--color1);
+    backdrop-filter: blur(5px);
+}
+
+.noteCard div:nth-child(1){
+    width: 80%;
+    overflow: hidden;
+    cursor: default;
+}
+
+.noteCard div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+}
+
+.noteCard h2{
+    border-bottom: 2px solid var(--color3);
+}
+
+.curserPointer{
+    cursor: pointer !important;
+}
+/*+++++++++++++ Overlay +++++++++++++*/
+
+#overlayContent{
+    background-color: rgba(36, 34, 34, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display:none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+#closeOverlay {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+}
+
+#wrapperOverlayNote {
+    display: flex;
+    padding: 20px;
+    width: min(70vw,800px);
+    background-color: var(--color2);
+    border-radius: var(--borderRadius1);
+    
+}
+
+#wrapperOverlayNote div:nth-child(1) {
+    width: 80%;
+    margin-right: 30px;
+}
+
+#wrapperOverlayNote div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10%;
+}
+
+#wrapperOverlayNote input,
+#wrapperOverlayNote textarea {
+    width: calc(100% - 30px);
+    background-color: transparent;
+    border: none;
+    resize: none;
+    outline: none;
+    padding: 15px;
+    margin: unset;
+    color: var(--color1);
+    font-size: 18px;
+}
+
+#wrapperOverlayNote input{
+    border-bottom: 2px solid var(--color3);
+}
+
+#wrapperOverlayNote textarea {
+    height: 300px;
+    margin-top: 20px;
+}
+
+
+/*+++++++++++++ responsive Design +++++++++++++*/
+
+@media (max-width: 700px) {
+    body{
+        font-size: 16px;
+    }
+
+    .buttonStyle {
+        width:55px;
+        height:55px;
+    }
+
+    .buttonStyle img{
+        width: 30px;
+        height: 30px;
+    }
+    
+    #staticContent button{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+
+    #dynamicContent {
+        padding-left: 80px;
+    }
+
+    .noteCard {
+        height: 250px;
+        width: 250px;
+    }
+
+#wrapperOverlayNote input,
+#wrapperOverlayNote textarea {
+    font-size: 16px;
+}
+}
+
+@media (max-width: 500px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #staticContent{
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        z-index: 1;
+    }
+
+    #dynamicContent{
+        padding-left: 0;
+        justify-content: center;
+        padding-top: 75px;
+    }
+
+    .noteCard {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #wrapperOverlayNote {
+        width: 250px;
+    }
+
+    #closeOverlay {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+}
